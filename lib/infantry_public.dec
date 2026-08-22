@@ -1,0 +1,108 @@
+#Transports Action
+
+[hiddenAction_aimotorizen1]
+autoTrigger:if self.isControlledByAI() and numberOfUnitsInTeam(withTag="combat_vehicle_tag",greaterThan=0,withinRange=1000)
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:combat_vehicle_tag
+addWaypoint_target_mapMustBeReachable:true
+
+[hiddenAction_aimotorizen2]
+autoTrigger:if self.isControlledByAI() and numberOfUnitsInTeam(withTag="mc_tag",greaterThan=0,withinRange=1000)
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:mc_tag
+addWaypoint_target_mapMustBeReachable:true
+
+[hiddenAction_aimotorizen3]
+autoTrigger:if self.isControlledByAI() and numberOfUnitsInTeam(withTag="apc_tag",greaterThan=0,withinRange=1000)
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:apc_tag
+addWaypoint_target_mapMustBeReachable:true
+
+[action_motorizen1]
+isActive:if numberOfUnitsInTeam(withTag="combat_vehicle_tag",greaterThan=0,withinRange=100)
+isVisible:if numberOfUnitsInTeam(withTag="combat_vehicle_tag",greaterThan=0,withinRange=100)
+text:进入战斗载具
+description:进入距离最近的战斗载具
+unitShownInUI:combat_vehicle
+iconExtraImage:SHARED:icon_upgrade.png
+buildSpeed:1
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:combat_vehicle_tag
+addWaypoint_target_nearestUnit_maxRange:100
+addWaypoint_target_mapMustBeReachable:true
+ai_isHighPriority:true
+
+[action_motorizen2]
+isActive:if numberOfUnitsInTeam(withTag="mc_tag",greaterThan=0,withinRange=100)
+isVisible:if numberOfUnitsInTeam(withTag="mc_tag",greaterThan=0,withinRange=100)
+text:进入摩托化载具
+description:进入距离最近的摩托化载具
+unitShownInUI:ger_scout
+iconExtraImage:SHARED:icon_upgrade.png
+buildSpeed:1
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:mc_tag
+addWaypoint_target_nearestUnit_maxRange:100
+addWaypoint_target_mapMustBeReachable:true
+ai_isHighPriority:true
+
+[action_motorizen3]
+isActive:if numberOfUnitsInTeam(withTag="apc_tag",greaterThan=0,withinRange=100)
+isVisible:if numberOfUnitsInTeam(withTag="apc_tag",greaterThan=0,withinRange=100)
+text:进入机械化载具
+description:进入距离最近的机械化载具
+unitShownInUI:run_scout
+iconExtraImage:SHARED:icon_upgrade.png
+buildSpeed:1
+clearAllWaypoints:true
+addWaypoint_type:loadInto
+addWaypoint_target_nearestUnit_team:own
+addWaypoint_target_nearestUnit_tagged:apc_tag
+addWaypoint_target_nearestUnit_maxRange:100
+addWaypoint_target_mapMustBeReachable:true
+ai_isHighPriority:true
+
+#Surrender Action
+
+[hiddenAction_surrender1]
+autoTrigger:if numberOfUnitsInEnemyTeam(withTag="renmin_jundui",greaterThan=5,withinRange=200) and self.noUnitInTeam(withTag="soldier",lessThan=2,withinRange=200)
+switchToNeutralTeam:true
+addWaypoint_type:touchTarget
+addWaypoint_target_nearestUnit_team:any
+addWaypoint_target_nearestUnit_tagged:renmin_jundui
+addWaypoint_target_nearestUnit_maxRange:200
+addWaypoint_target_mapMustBeReachable:true
+
+[hiddenAction_surrender2]
+autoTrigger:if numberOfUnitsInEnemyTeam(withTag="renmin_jundui2",greaterThan=5,withinRange=200) and self.noUnitInTeam(withTag="soldier",lessThan=2,withinRange=200)
+switchToNeutralTeam:true
+addWaypoint_type:touchTarget
+addWaypoint_target_nearestUnit_team:any
+addWaypoint_target_nearestUnit_tagged:renmin_jundui2
+addWaypoint_target_nearestUnit_maxRange:200
+addWaypoint_target_mapMustBeReachable:true
+
+[hiddenAction_surrender3]
+autoTrigger:if numberOfUnitsInEnemyTeam(withTag="renmin_jundui3",greaterThan=2,withinRange=300) and self.noUnitInTeam(withTag="soldier",lessThan=2,withinRange=200)
+switchToNeutralTeam:true
+addWaypoint_type:touchTarget
+addWaypoint_target_nearestUnit_team:any
+addWaypoint_target_nearestUnit_tagged:renmin_jundui3
+addWaypoint_target_nearestUnit_maxRange:300
+addWaypoint_target_mapMustBeReachable:true
+
+#SWAP Process
+
+[hiddenAction_swaplogic]
+autoTrigger:if numberOfUnitsInEnemyTeam(withinRange=200,greaterThan=0) and numberOfUnitsInEnemyTeam(withTag="Infantry",withinRange=200,lessThan=1)
+convertTo:run_infantrys2

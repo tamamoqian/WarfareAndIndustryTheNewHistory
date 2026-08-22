@@ -1,0 +1,10 @@
+[mod]
+title:战争与工业 - 新历史
+description:-模组版本:Beta.0001\n-作者:xunSharp\n-该模组为基于《战争与工业：实验战争2》的剧情类模组，相比实验战争2将会简化与完善很多机制与单位，很多东西尚未完成，欢迎前往模组群QQ:59588607提出建议，若有不妥的设计，也随时欢迎前来批评\n-此模组为开源自由软件，无论您的目的是什么，您是何人，您都可以随时随地地在任何时候使用、修改该模组及公开发行该模组的分支版本\n-具体自由软件是什么请参考:https://www.gnu.org/philosophy/free-sw.html\n-Github仓库:https://github.com/xunsharp2025/WarfareAndIndustryTheNewHistory
+minVersion:1.15
+tags: maps, units
+thumbnail: icon.png
+[music]
+sourceFolder:res/raw/music
+whenUsingUnitsFromThisMod_playExclusively:true
+addToNormalPlaylist:true
